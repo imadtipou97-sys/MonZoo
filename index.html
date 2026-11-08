@@ -319,9 +319,9 @@ renderProducts();loadProducts();
 try{if(localStorage.getItem('mz_lang')==='ar')setLang('ar')}catch(e){}
 
 /* ===== Reçu (commande / rendez-vous) ===== */
-const CMB_KEY='';/* Clé CallMeBot : reçoit les commandes sur le WhatsApp de la clinique sans rediriger le client */
+const TG_TOKEN='9114143391:AAFwc4Fx8BI3SJRLT9Erun0I1X7Bel0U9A0',TG_CHAT='6629459643';/* Telegram : jeton du bot + identifiant du chat pour recevoir commandes et rendez-vous */
 function mkRef(){const t=new Date(),z=x=>String(x).padStart(2,'0');return 'MZ-'+String(t.getFullYear()).slice(2)+z(t.getMonth()+1)+z(t.getDate())+'-'+Math.floor(1000+Math.random()*9000)}
-function notifyOwner(t){if(!CMB_KEY)return;try{fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent('+'+WA)+'&text='+encodeURIComponent(t)+'&apikey='+encodeURIComponent(CMB_KEY),{mode:'no-cors'}).catch(()=>{})}catch(e){}}
+function notifyOwner(t){if(!TG_TOKEN||!TG_CHAT)return;try{fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage?chat_id='+encodeURIComponent(TG_CHAT)+'&text='+encodeURIComponent(t),{mode:'no-cors'}).catch(()=>{})}catch(e){}}
 const da=n=>Number(n).toLocaleString('fr-FR')+' DA';
 function wrapT(c,t,mw){const out=[];String(t).split('\n').forEach(par=>{let cur='';par.split(' ').forEach(w=>{const nx=cur?cur+' '+w:w;if(cur&&c.measureText(nx).width>mw){out.push(cur);cur=w}else cur=nx});out.push(cur)});return out}
 function drawR(c,r,ar,W,dry){
