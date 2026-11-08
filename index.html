@@ -322,6 +322,8 @@ try{if(localStorage.getItem('mz_lang')==='ar')setLang('ar')}catch(e){}
 const TG_TOKEN='9114143391:AAFwc4Fx8BI3SJRLT9Erun0I1X7Bel0U9A0',TG_CHAT='6629459643';/* Telegram : jeton du bot + identifiant du chat pour recevoir commandes et rendez-vous */
 function mkRef(){const t=new Date(),z=x=>String(x).padStart(2,'0');return 'MZ-'+String(t.getFullYear()).slice(2)+z(t.getMonth()+1)+z(t.getDate())+'-'+Math.floor(1000+Math.random()*9000)}
 function notifyOwner(t){if(!TG_TOKEN||!TG_CHAT)return;try{fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage?chat_id='+encodeURIComponent(TG_CHAT)+'&text='+encodeURIComponent(t),{mode:'no-cors'}).catch(()=>{})}catch(e){}}
+const MAKE_URL='https://hook.eu1.make.com/34f0p4xfgeoue75b5k1xu3xp93w3h2ll';/* Adresse du webhook Make.com */
+function logSheet(o){if(!MAKE_URL)return;try{fetch(MAKE_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(Object.assign({},o,{lang:lang})).toString()}).catch(()=>{})}catch(e){}}
 const da=n=>Number(n).toLocaleString('fr-FR')+' DA';
 function wrapT(c,t,mw){const out=[];String(t).split('\n').forEach(par=>{let cur='';par.split(' ').forEach(w=>{const nx=cur?cur+' '+w:w;if(cur&&c.measureText(nx).width>mw){out.push(cur);cur=w}else cur=nx});out.push(cur)});return out}
 function drawR(c,r,ar,W,dry){
@@ -365,6 +367,7 @@ $('oOk').onclick=()=>{const n=$('oN').value.trim(),ph=$('oP').value.trim(),ad=$(
  const p=ordP,q=ordQ,ref=mkRef(),tot=p.price*q;
  const rec={kind:'cmd',ref,name:n,phone:ph,rows:ad?[[['Adresse','العنوان'],ad]]:[],items:[{n:(lang==='ar'&&p.name_ar)||p.name_fr,q,u:p.price}],total:tot};
  notifyOwner('🛒 Commande '+ref+'\nNom : '+n+'\nTéléphone : '+ph+(ad?'\nAdresse : '+ad:'')+'\n'+p.name_fr+' x'+q+'\nTotal : '+da(tot));
+ logSheet({type:'cmd',ref,name:n,phone:ph,address:ad,product:p.name_fr,qty:q,total:tot});
 
  $('ord').hidden=true;showReceipt(rec)};
 
@@ -376,6 +379,7 @@ $('rdvSend').onclick=()=>{const n=$('rdvName').value.trim(),p=$('rdvPhone').valu
  const dt=j+'/'+m+'/'+y,an=$('rdvAnimal').value,sv=$('rdvService').value,ref=mkRef();
   const rec={kind:'rdv',ref,name:n,phone:p,rows:[[['Animal','الحيوان'],$('rdvAnimal').selectedOptions[0].textContent],[['Service','الخدمة'],$('rdvService').selectedOptions[0].textContent],[['Date du rendez-vous','تاريخ الموعد'],dt],[['Heure','الساعة'],tm||(lang==='fr'?'à convenir':'يُحدد لاحقاً')]].concat(note?[[['Remarque','ملاحظة'],note]]:[])};
   notifyOwner('📅 Rendez-vous '+ref+'\nNom : '+n+'\nTéléphone : '+p+'\nAnimal : '+an+'\nService : '+sv+'\nDate : '+dt+'\nHeure : '+(tm||'à convenir')+(note?'\nRemarque : '+note:''));
+  logSheet({type:'rdv',ref,name:n,phone:p,animal:an,service:sv,date:dt,time:tm||'',note:note});
 
   showReceipt(rec)}})();
 
