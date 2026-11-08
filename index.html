@@ -365,7 +365,7 @@ $('oOk').onclick=()=>{const n=$('oN').value.trim(),ph=$('oP').value.trim(),ad=$(
  const p=ordP,q=ordQ,ref=mkRef(),tot=p.price*q;
  const rec={kind:'cmd',ref,name:n,phone:ph,rows:ad?[[['Adresse','العنوان'],ad]]:[],items:[{n:(lang==='ar'&&p.name_ar)||p.name_fr,q,u:p.price}],total:tot};
  notifyOwner('🛒 Commande '+ref+'\nNom : '+n+'\nTéléphone : '+ph+(ad?'\nAdresse : '+ad:'')+'\n'+p.name_fr+' x'+q+'\nTotal : '+da(tot));
- api('/rest/v1/orders',{method:'POST',headers:J,body:JSON.stringify({ref,name:n,phone:ph,address:ad||null,items:[{name:p.name_fr,qty:q,price:p.price}],total:tot})}).catch(()=>{});
+
  $('ord').hidden=true;showReceipt(rec)};
 
 /* ===== Rendez-vous ===== */
@@ -376,7 +376,7 @@ $('rdvSend').onclick=()=>{const n=$('rdvName').value.trim(),p=$('rdvPhone').valu
  const dt=j+'/'+m+'/'+y,an=$('rdvAnimal').value,sv=$('rdvService').value,ref=mkRef();
   const rec={kind:'rdv',ref,name:n,phone:p,rows:[[['Animal','الحيوان'],$('rdvAnimal').selectedOptions[0].textContent],[['Service','الخدمة'],$('rdvService').selectedOptions[0].textContent],[['Date du rendez-vous','تاريخ الموعد'],dt],[['Heure','الساعة'],tm||(lang==='fr'?'à convenir':'يُحدد لاحقاً')]].concat(note?[[['Remarque','ملاحظة'],note]]:[])};
   notifyOwner('📅 Rendez-vous '+ref+'\nNom : '+n+'\nTéléphone : '+p+'\nAnimal : '+an+'\nService : '+sv+'\nDate : '+dt+'\nHeure : '+(tm||'à convenir')+(note?'\nRemarque : '+note:''));
-  api('/rest/v1/appointments',{method:'POST',headers:J,body:JSON.stringify({name:n,phone:p,animal:an,service:sv,date:d.value,time:tm||null,note:'['+ref+']'+(note?' '+note:'')})}).catch(()=>{});
+
   showReceipt(rec)}})();
 
 /* ===== Admin ===== */
