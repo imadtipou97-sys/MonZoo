@@ -188,6 +188,25 @@ section{padding:72px 28px}.section-head{margin-bottom:36px}
 .spanel{min-height:380px;padding:34px}.svisual{max-height:320px}
 .mob{display:none}
 @media(max-width:900px){section{padding:52px 20px}nav.open .mob{display:block}.spanel{padding:24px}}
+
+/* Reçu / commande */
+button.pbtn{width:100%;border:0;cursor:pointer;font-family:inherit}
+.mzm{position:fixed;inset:0;z-index:60;background:#2a1240cc;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:18px}
+.mzm[hidden]{display:none}
+.mzc{background:#fff;border-radius:26px;width:100%;max-width:440px;margin:auto;padding:26px;box-shadow:var(--sh)}
+.mzc h3{margin:0 0 6px;font-family:'Fraunces',Georgia,serif;color:var(--deep);font-size:1.5rem}
+[lang=ar] .mzc h3{font-family:'Cairo',sans-serif}
+.osum{background:var(--lavender);border-radius:16px;padding:12px 14px;margin:12px 0 4px;font-weight:700;color:var(--deep);display:flex;justify-content:space-between;gap:10px}
+.mzc label{display:flex;flex-direction:column;gap:6px;font-size:.84rem;font-weight:700;color:var(--purple);margin-top:12px}
+.mzc input{padding:13px 15px;border:1.5px solid var(--line);border-radius:14px;font:inherit;font-weight:400;color:var(--ink);background:#fcfaff;width:100%}
+.mzc input:focus{outline:0;border-color:var(--violet);box-shadow:0 0 0 4px #713b9b22}
+.mzb{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.mzb .btn{flex:1;text-align:center;cursor:pointer;font:inherit;font-weight:700;padding:13px 18px;white-space:nowrap}
+.mzb .primary{border:0}
+.rimg-wrap{max-height:60vh;overflow:auto;margin-top:12px;border-radius:14px;border:1px solid var(--line)}
+.rimg{width:100%;height:auto;display:block}
+[dir=rtl] .mzc{text-align:right}
+@media print{body>*:not(#rcpt){display:none!important}#rcpt{position:static;background:#fff;padding:0}#rcpt .mzc{box-shadow:none;max-width:none;padding:0}#rcpt .mzb,#rcpt h3,#rcpt p{display:none}.rimg-wrap{max-height:none;overflow:visible;border:0}}
 </style>
 </head>
 <body>
@@ -213,7 +232,7 @@ section{padding:72px 28px}.section-head{margin-bottom:36px}
 
 <section class="services" id="services"><div class="wrap"><div class="section-head"><h2 data-fr="Nos services vétérinaires" data-ar="خدماتنا البيطرية">Nos services vétérinaires</h2><p data-fr="Choisissez un service pour en savoir plus." data-ar="اختاروا خدمة لمعرفة المزيد.">Choisissez un service pour en savoir plus.</p></div>
 <div class="slayout"><div class="smenu" role="tablist"><button type="button" class="sitem active" role="tab" data-i="0"><i>🩺</i><span data-fr="Consultation et soins" data-ar="الفحص والعلاج">Consultation et soins</span></button><button type="button" class="sitem" role="tab" data-i="1"><i>💉</i><span data-fr="Vaccination et conseils" data-ar="التلقيح والنصائح">Vaccination et conseils</span></button><button type="button" class="sitem" role="tab" data-i="2"><i>🐾</i><span data-fr="Chirurgie" data-ar="الجراحة">Chirurgie</span></button><button type="button" class="sitem" role="tab" data-i="3"><i>💊</i><span data-fr="Pharmacie vétérinaire" data-ar="الصيدلية البيطرية">Pharmacie vétérinaire</span></button><button type="button" class="sitem" role="tab" data-i="4"><i>🐑</i><span data-fr="Soins d’élevage" data-ar="العناية بالقطيع">Soins d’élevage</span></button><button type="button" class="sitem" role="tab" data-i="5"><i>🐶</i><span data-fr="Animalerie" data-ar="متجر الحيوانات">Animalerie</span></button></div><div class="spanels"><div class="spanel show" role="tabpanel" id="sp0"><div class="stext"><div class="sicon">🩺</div><h3 data-fr="Consultation et soins" data-ar="الفحص والعلاج">Consultation et soins</h3><p data-fr="Examen complet de votre animal, diagnostic et traitement adaptés à son état de santé." data-ar="فحص شامل لحيوانكم وتشخيص وعلاج مناسب لحالته الصحية.">Examen complet de votre animal, diagnostic et traitement adaptés à son état de santé.</p><a class="btn primary" href="#rdv" data-svc="Consultation" data-fr="Prendre rendez-vous" data-ar="احجز موعداً">Prendre rendez-vous</a></div><img class="svisual" src="facade.jpg" alt="" loading="lazy"></div><div class="spanel" role="tabpanel" id="sp1"><div class="stext"><div class="sicon">💉</div><h3 data-fr="Vaccination et conseils" data-ar="التلقيح والنصائح">Vaccination et conseils</h3><p data-fr="Calendrier de vaccination et conseils de prévention pour protéger votre compagnon au quotidien." data-ar="برنامج التلقيح ونصائح الوقاية لحماية حيوانكم الأليف يومياً.">Calendrier de vaccination et conseils de prévention pour protéger votre compagnon au quotidien.</p><a class="btn primary" href="#rdv" data-svc="Vaccination" data-fr="Prendre rendez-vous" data-ar="احجز موعداً">Prendre rendez-vous</a></div><div class="svisual emoji">💉</div></div><div class="spanel" role="tabpanel" id="sp2"><div class="stext"><div class="sicon">🐾</div><h3 data-fr="Chirurgie" data-ar="الجراحة">Chirurgie</h3><p data-fr="Prise en charge chirurgicale selon les besoins de votre animal. Contactez-nous pour en discuter." data-ar="التكفل الجراحي حسب احتياجات حيوانكم. تواصلوا معنا للاستفسار.">Prise en charge chirurgicale selon les besoins de votre animal. Contactez-nous pour en discuter.</p><a class="btn primary" href="#rdv" data-svc="Chirurgie" data-fr="Prendre rendez-vous" data-ar="احجز موعداً">Prendre rendez-vous</a></div><div class="svisual emoji">🐾</div></div><div class="spanel" role="tabpanel" id="sp3"><div class="stext"><div class="sicon">💊</div><h3 data-fr="Pharmacie vétérinaire" data-ar="الصيدلية البيطرية">Pharmacie vétérinaire</h3><p data-fr="Médicaments et produits vétérinaires disponibles au cabinet, pour animaux de compagnie et d’élevage." data-ar="أدوية ومنتجات بيطرية متوفرة في العيادة للحيوانات الأليفة وحيوانات المزرعة.">Médicaments et produits vétérinaires disponibles au cabinet, pour animaux de compagnie et d’élevage.</p><a class="btn primary" href="#produits" data-fr="Voir nos produits" data-ar="تصفحوا المنتجات">Voir nos produits</a></div><img class="svisual" src="pharmacie.jpg" alt="" loading="lazy"></div><div class="spanel" role="tabpanel" id="sp4"><div class="stext"><div class="sicon">🐑</div><h3 data-fr="Soins d’élevage" data-ar="العناية بالقطيع">Soins d’élevage</h3><p data-fr="Suivi et accompagnement des éleveurs pour la santé et le bien-être de leurs troupeaux." data-ar="متابعة ومرافقة المربين لصحة وراحة قطعانهم.">Suivi et accompagnement des éleveurs pour la santé et le bien-être de leurs troupeaux.</p><a class="btn primary" href="#rdv" data-svc="Soins d’élevage" data-fr="Prendre rendez-vous" data-ar="احجز موعداً">Prendre rendez-vous</a></div><div class="svisual emoji">🐑</div></div><div class="spanel" role="tabpanel" id="sp5"><div class="stext"><div class="sicon">🐶</div><h3 data-fr="Animalerie" data-ar="متجر الحيوانات">Animalerie</h3><p data-fr="Alimentation, accessoires et gourmandises pour chiens et chats." data-ar="أغذية وإكسسوارات ومكافآت للكلاب والقطط.">Alimentation, accessoires et gourmandises pour chiens et chats.</p><a class="btn primary" href="#produits" data-fr="Voir nos produits" data-ar="تصفحوا المنتجات">Voir nos produits</a></div><img class="svisual" src="boutique.jpg" alt="" loading="lazy"></div></div></div></div></section>
-<section class="rdv" id="rdv"><div class="wrap"><div class="section-head"><h2 data-fr="Prendre rendez-vous" data-ar="احجز موعداً">Prendre rendez-vous</h2><p data-fr="Choisissez le service et la date qui vous conviennent. Votre demande est envoyée par WhatsApp à la clinique." data-ar="اختاروا الخدمة والتاريخ المناسبين. يُرسل طلبكم عبر واتساب إلى العيادة.">Choisissez le service et la date qui vous conviennent. Votre demande est envoyée par WhatsApp à la clinique.</p></div><div class="rdv-box"><div class="rdv-grid"><label><span data-fr="Votre nom" data-ar="الاسم">Votre nom</span><input id="rdvName" type="text" autocomplete="name"></label><label><span data-fr="Téléphone" data-ar="الهاتف">Téléphone</span><input id="rdvPhone" type="tel" autocomplete="tel"></label><label><span data-fr="Animal" data-ar="الحيوان">Animal</span><select id="rdvAnimal"><option value="Chien" data-fr="Chien" data-ar="كلب">Chien</option><option value="Chat" data-fr="Chat" data-ar="قط">Chat</option><option value="Oiseau" data-fr="Oiseau" data-ar="طائر">Oiseau</option><option value="Autre" data-fr="Autre" data-ar="آخر">Autre</option></select></label><label><span data-fr="Service" data-ar="الخدمة">Service</span><select id="rdvService"><option value="Consultation" data-fr="Consultation" data-ar="فحص طبي">Consultation</option><option value="Vaccination" data-fr="Vaccination" data-ar="تلقيح">Vaccination</option><option value="Chirurgie" data-fr="Chirurgie" data-ar="جراحة">Chirurgie</option><option value="Suivi et conseils" data-fr="Suivi et conseils" data-ar="متابعة ونصائح">Suivi et conseils</option><option value="Soins d’élevage" data-fr="Soins d’élevage" data-ar="العناية بالقطيع">Soins d’élevage</option></select></label><label><span data-fr="Date souhaitée" data-ar="التاريخ">Date souhaitée</span><input id="rdvDate" type="date"></label><label><span data-fr="Heure souhaitée" data-ar="الساعة">Heure souhaitée</span><input id="rdvTime" type="time"></label><label class="full"><span data-fr="Remarque (facultatif)" data-ar="ملاحظة (اختياري)">Remarque (facultatif)</span><textarea id="rdvNote" rows="2"></textarea></label></div><button class="btn primary rdv-send" id="rdvSend" type="button" data-fr="Envoyer ma demande par WhatsApp" data-ar="إرسال الطلب عبر واتساب">Envoyer ma demande par WhatsApp</button><p class="rdv-note" data-fr="Le rendez-vous est confirmé par la clinique après votre message." data-ar="يتم تأكيد الموعد من طرف العيادة بعد رسالتكم.">Le rendez-vous est confirmé par la clinique après votre message.</p></div></div></section>
+<section class="rdv" id="rdv"><div class="wrap"><div class="section-head"><h2 data-fr="Prendre rendez-vous" data-ar="احجز موعداً">Prendre rendez-vous</h2><p data-fr="Choisissez le service et la date qui vous conviennent. Vous recevez un reçu à télécharger." data-ar="اختاروا الخدمة والتاريخ المناسبين. ستحصلون على إيصال قابل للتحميل.">Choisissez le service et la date qui vous conviennent. Vous recevez un reçu à télécharger.</p></div><div class="rdv-box"><div class="rdv-grid"><label><span data-fr="Votre nom" data-ar="الاسم">Votre nom</span><input id="rdvName" type="text" autocomplete="name"></label><label><span data-fr="Téléphone" data-ar="الهاتف">Téléphone</span><input id="rdvPhone" type="tel" autocomplete="tel"></label><label><span data-fr="Animal" data-ar="الحيوان">Animal</span><select id="rdvAnimal"><option value="Chien" data-fr="Chien" data-ar="كلب">Chien</option><option value="Chat" data-fr="Chat" data-ar="قط">Chat</option><option value="Oiseau" data-fr="Oiseau" data-ar="طائر">Oiseau</option><option value="Autre" data-fr="Autre" data-ar="آخر">Autre</option></select></label><label><span data-fr="Service" data-ar="الخدمة">Service</span><select id="rdvService"><option value="Consultation" data-fr="Consultation" data-ar="فحص طبي">Consultation</option><option value="Vaccination" data-fr="Vaccination" data-ar="تلقيح">Vaccination</option><option value="Chirurgie" data-fr="Chirurgie" data-ar="جراحة">Chirurgie</option><option value="Suivi et conseils" data-fr="Suivi et conseils" data-ar="متابعة ونصائح">Suivi et conseils</option><option value="Soins d’élevage" data-fr="Soins d’élevage" data-ar="العناية بالقطيع">Soins d’élevage</option></select></label><label><span data-fr="Date souhaitée" data-ar="التاريخ">Date souhaitée</span><input id="rdvDate" type="date"></label><label><span data-fr="Heure souhaitée" data-ar="الساعة">Heure souhaitée</span><input id="rdvTime" type="time"></label><label class="full"><span data-fr="Remarque (facultatif)" data-ar="ملاحظة (اختياري)">Remarque (facultatif)</span><textarea id="rdvNote" rows="2"></textarea></label></div><button class="btn primary rdv-send" id="rdvSend" type="button" data-fr="Envoyer ma demande" data-ar="إرسال الطلب">Envoyer ma demande</button><p class="rdv-note" data-fr="Le rendez-vous est confirmé par la clinique après votre demande." data-ar="يتم تأكيد الموعد من طرف العيادة بعد طلبكم.">Le rendez-vous est confirmé par la clinique après votre demande.</p></div></div></section>
 <section class="products" id="produits"><div class="wrap">
 <div class="section-head"><h2 data-fr="Nos produits" data-ar="منتجاتنا">Nos produits</h2><p data-fr="Découvrez notre sélection pour la santé et le confort de vos animaux." data-ar="اكتشفوا مختارتنا لصحة وراحة حيواناتكم.">Découvrez notre sélection pour la santé et le confort de vos animaux.</p></div>
 <div class="tabs" id="tabs"></div>
@@ -225,7 +244,7 @@ section{padding:72px 28px}.section-head{margin-bottom:36px}
 <div style="display:flex;justify-content:space-between;align-items:center"><h2>Administration</h2><button class="abtn" id="aClose" type="button">✕ Fermer</button></div>
 <div id="aLogin"><div class="aform"><label class="full">Email<input id="lEmail" type="email" autocomplete="username"></label><label class="full">Mot de passe<input id="lPass" type="password" autocomplete="current-password"></label><div class="full"><button class="abtn p" id="lBtn" type="button">Se connecter</button></div></div></div>
 <div id="aDash" hidden>
-<div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap"><button class="abtn p" id="tabP" type="button">Produits</button><button class="abtn" id="tabR" type="button">Rendez-vous</button><button class="abtn" id="aOut" type="button" style="margin-left:auto">Déconnexion</button></div>
+<div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap"><button class="abtn p" id="tabP" type="button">Produits</button><button class="abtn" id="tabR" type="button">Rendez-vous</button><button class="abtn" id="tabO" type="button">Commandes</button><button class="abtn" id="aOut" type="button" style="margin-left:auto">Déconnexion</button></div>
 <div id="pPane"><div id="aList"></div>
 <div class="aform">
 <label>Catégorie<select id="fCat"><option value="nutrition">Nutrition</option><option value="pharmacy">Pharmacie</option><option value="hygiene">Hygiène et bien-être</option><option value="accessoires">Accessoires</option></select></label>
@@ -237,9 +256,24 @@ section{padding:72px 28px}.section-head{margin-bottom:36px}
 <div class="full" style="display:flex;gap:8px;flex-wrap:wrap"><button class="abtn p" id="aSave" type="button">Ajouter le produit</button><button class="abtn" id="aCancel" type="button" hidden>Annuler</button></div>
 </div></div>
 <div id="rPane" hidden><div id="rList"></div></div>
+<div id="oPane" hidden><div id="oList"></div></div>
 </div></div></div>
 <a class="wa-fab" href="https://wa.me/213551874703" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 <footer><strong>MonZoo</strong> · <span data-fr="Cabinet vétérinaire et animalerie" data-ar="عيادة بيطرية ومتجر حيوانات">Cabinet vétérinaire et animalerie</span><br>💜 YOUR PETS, OUR PASSION</footer>
+<div id="ord" class="mzm" hidden role="dialog" aria-modal="true"><div class="mzc">
+<h3 data-fr="Confirmer la commande" data-ar="تأكيد الطلب">Confirmer la commande</h3>
+<div class="osum"><span id="oName"></span><span id="oTot"></span></div>
+<label><span data-fr="Votre nom" data-ar="الاسم">Votre nom</span><input id="oN" type="text" autocomplete="name"></label>
+<label><span data-fr="Téléphone" data-ar="الهاتف">Téléphone</span><input id="oP" type="tel" autocomplete="tel"></label>
+<label><span data-fr="Adresse (facultatif)" data-ar="العنوان (اختياري)">Adresse (facultatif)</span><input id="oA" type="text" autocomplete="street-address"></label>
+<div class="mzb"><button class="btn secondary" id="oX" type="button" data-fr="Annuler" data-ar="إلغاء">Annuler</button><button class="btn primary" id="oOk" type="button" data-fr="Valider la commande" data-ar="تأكيد الطلب">Valider la commande</button></div>
+</div></div>
+<div id="rcpt" class="mzm" hidden role="dialog" aria-modal="true"><div class="mzc" style="max-width:560px">
+<h3 data-fr="Votre reçu" data-ar="إيصالك">Votre reçu</h3>
+<p class="muted" id="rMsg" style="margin:0"></p>
+<div class="rimg-wrap"><img id="rImg" class="rimg" alt=""></div>
+<div class="mzb"><a class="btn primary" id="rDl" download="recu-monzoo.png" data-fr="Télécharger" data-ar="تحميل">Télécharger</a><button class="btn secondary" id="rPr" type="button" data-fr="Imprimer / PDF" data-ar="طباعة / PDF">Imprimer / PDF</button><button class="btn secondary" id="rX" type="button" data-fr="Fermer" data-ar="إغلاق">Fermer</button></div>
+</div></div>
 <script id="app">
 const SB='https://dylsvuqvbmyxnokxummx.supabase.co',KEY='sb_publishable_VkX1OoxdWMOnD-UZ1b4QdA_aI6rYx-q',WA='213551874703';
 const $=id=>document.getElementById(id),esc=t=>String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -267,30 +301,83 @@ function renderProducts(){
  $('pgrid').innerHTML=list.map(p=>{const c=CATS.find(x=>x.id===p.category)||CATS[1],name=(lang==='ar'&&p.name_ar)||p.name_fr;
   const img=p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(name)}" loading="lazy">`:c.icon;
   const msg=encodeURIComponent((lang==='fr'?'Bonjour, je suis intéressé par : ':'مرحباً، أنا مهتم بـ: ')+p.name_fr);
-  return `<article class="pcard" data-id="${p.id}"><div class="pimg">${img}</div><div class="pbody"><span class="pcat">${c[lang]}</span><h3 class="pname">${esc(name)}</h3><div class="pprice">${fmt(p.price)}</div><div class="qty"><button type="button" data-q="-1" aria-label="-">−</button><input type="number" inputmode="numeric" min="1" max="99" value="1" aria-label="${lang==='fr'?'Quantité':'الكمية'}"><button type="button" data-q="1" aria-label="+">+</button><span class="qtot" hidden></span></div><a class="pbtn" href="https://wa.me/${WA}?text=${msg}" target="_blank" rel="noopener">${lang==='fr'?'Commander':'اطلب الآن'}</a></div></article>`}).join('')}
+  return `<article class="pcard" data-id="${p.id}"><div class="pimg">${img}</div><div class="pbody"><span class="pcat">${c[lang]}</span><h3 class="pname">${esc(name)}</h3><div class="pprice">${fmt(p.price)}</div><div class="qty"><button type="button" data-q="-1" aria-label="-">−</button><input type="number" inputmode="numeric" min="1" max="99" value="1" aria-label="${lang==='fr'?'Quantité':'الكمية'}"><button type="button" data-q="1" aria-label="+">+</button><span class="qtot" hidden></span></div><button type="button" class="pbtn">${lang==='fr'?'Commander':'اطلب الآن'}</button></div></article>`}).join('')}
 /* ===== Quantité ===== */
 function qtyUpdate(card){const p=PRODUCTS.find(x=>String(x.id)===card.dataset.id);if(!p)return;const inp=card.querySelector('.qty input');
  let q=parseInt(inp.value,10);if(isNaN(q)||q<1)q=1;if(q>99)q=99;inp.value=q;
  const tot=card.querySelector('.qtot');tot.hidden=q<2;tot.textContent=(lang==='fr'?'Total : ':'المجموع: ')+fmt(p.price*q);
  const name=(lang==='ar'&&p.name_ar)||p.name_fr;
  const msg=lang==='fr'?'Bonjour, je souhaite commander : '+p.name_fr+' x'+q+' — Total : '+fmt(p.price*q):'مرحباً، أريد طلب: '+name+' x'+q+' — المجموع: '+fmt(p.price*q);
- card.querySelector('.pbtn').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg)}
+ }
 $('pgrid').addEventListener('click',e=>{const b=e.target.closest('.qty button');if(!b)return;const card=b.closest('.pcard'),inp=card.querySelector('.qty input');inp.value=(parseInt(inp.value,10)||1)+(+b.dataset.q);qtyUpdate(card)});
 $('pgrid').addEventListener('input',e=>{if(e.target.matches('.qty input'))qtyUpdate(e.target.closest('.pcard'))});
 $('pgrid').addEventListener('change',e=>{if(e.target.matches('.qty input'))qtyUpdate(e.target.closest('.pcard'))});
+$('pgrid').addEventListener('click',e=>{const b=e.target.closest('.pbtn');if(!b)return;const card=b.closest('.pcard');qtyUpdate(card);openOrder(PRODUCTS.find(x=>String(x.id)===card.dataset.id),parseInt(card.querySelector('.qty input').value,10)||1)});
 $('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b){activeCat=b.dataset.cat;renderProducts()}});
 async function loadProducts(){try{PRODUCTS=await api('/rest/v1/products?select=*&order=id.desc');loadErr=false}catch(e){if(e.message!=='session')loadErr=true}renderProducts()}
 renderProducts();loadProducts();
 try{if(localStorage.getItem('mz_lang')==='ar')setLang('ar')}catch(e){}
+
+/* ===== Reçu (commande / rendez-vous) ===== */
+const CMB_KEY='';/* Clé CallMeBot : reçoit les commandes sur le WhatsApp de la clinique sans rediriger le client */
+function mkRef(){const t=new Date(),z=x=>String(x).padStart(2,'0');return 'MZ-'+String(t.getFullYear()).slice(2)+z(t.getMonth()+1)+z(t.getDate())+'-'+Math.floor(1000+Math.random()*9000)}
+function notifyOwner(t){if(!CMB_KEY)return;try{fetch('https://api.callmebot.com/whatsapp.php?phone='+encodeURIComponent('+'+WA)+'&text='+encodeURIComponent(t)+'&apikey='+encodeURIComponent(CMB_KEY),{mode:'no-cors'}).catch(()=>{})}catch(e){}}
+const da=n=>Number(n).toLocaleString('fr-FR')+' DA';
+function wrapT(c,t,mw){const out=[];String(t).split('\n').forEach(par=>{let cur='';par.split(' ').forEach(w=>{const nx=cur?cur+' '+w:w;if(cur&&c.measureText(nx).width>mw){out.push(cur);cur=w}else cur=nx});out.push(cur)});return out}
+function drawR(c,r,ar,W,dry){
+ const P=36,sx=ar?W-P:P,ex=ar?P:W-P,F=(ar?'Cairo':'"Plus Jakarta Sans"')+',sans-serif',T=a=>a[ar?1:0];
+ c.direction=ar?'rtl':'ltr';c.textBaseline='alphabetic';
+ const fnt=(s,w)=>{c.font=w+' '+s+'px '+F},txt=(s,x,y,sz,w,col,al)=>{fnt(sz,w);if(dry)return;c.fillStyle=col;c.textAlign=al;c.fillText(s,x,y)};
+ let y=164;
+ if(!dry){c.fillStyle='#fff';c.fillRect(0,0,W,4000);c.fillStyle='#542477';c.fillRect(0,0,W,118);c.fillStyle='#f3b24a';c.fillRect(0,118,W,5);
+  const lg=document.querySelector('.brand img'),cx=ar?W-P-34:P+34;
+  if(lg){c.save();c.beginPath();c.arc(cx,59,34,0,7);c.clip();c.fillStyle='#fff';c.fillRect(cx-34,25,68,68);try{c.drawImage(lg,cx-34,25,68,68)}catch(e){}c.restore()}}
+ const hx=ar?W-P-84:P+84,cmd=r.kind==='cmd';
+ txt('MonZoo',hx,57,28,800,'#fff','start');txt(T(['Cabinet vétérinaire et animalerie','عيادة بيطرية ومتجر حيوانات']),hx,84,13,500,'#e8d6f6','start');
+ txt(T(cmd?['Reçu de commande','إيصال الطلب']:['Reçu de rendez-vous','إيصال الموعد']),sx,y,22,800,'#2a1240','start');y+=10;
+ const rule=()=>{if(!dry){c.fillStyle='#eadff3';c.fillRect(P,y,W-2*P,1)}};
+ const row=(lab,val)=>{fnt(15,700);const ls=wrapT(c,val,340);y+=28;txt(T(lab),sx,y,13,600,'#6b6376','start');ls.forEach((l,i)=>txt(l,ex,y+i*21,15,700,'#251d30','end'));y+=(ls.length-1)*21+12;rule()};
+ [[['Référence','المرجع'],r.ref],[['Émis le','صدر في'],new Date().toLocaleString('fr-FR',{dateStyle:'short',timeStyle:'short'})],[['Client','الزبون'],r.name],[['Téléphone','الهاتف'],r.phone]].concat(r.rows).forEach(a=>row(a[0],a[1]));
+ if(r.items){y+=30;txt(T(['Article','المنتج']),sx,y,13,600,'#6b6376','start');txt(T(['Montant','المبلغ']),ex,y,13,600,'#6b6376','end');
+  r.items.forEach(it=>{fnt(15,700);const ls=wrapT(c,it.n,330);y+=28;ls.forEach((l,i)=>txt(l,sx,y+i*21,15,700,'#251d30','start'));txt(fmt(it.u*it.q),ex,y,15,700,'#251d30','end');y+=(ls.length-1)*21+20;txt(it.q+' × '+fmt(it.u),sx,y,13,500,'#6b6376','start');y+=10;rule()});
+  y+=18;if(!dry){c.fillStyle='#f4eef9';c.beginPath();c.roundRect?c.roundRect(P,y,W-2*P,58,16):c.rect(P,y,W-2*P,58);c.fill()}
+  txt(T(['Total','المجموع']),sx+(ar?-16:16),y+37,17,700,'#2a1240','start');txt(fmt(r.total),ex+(ar?16:-16),y+38,24,800,'#542477','end');y+=58}
+ y+=34;fnt(14,500);
+ wrapT(c,T(cmd?['Merci pour votre commande ! La clinique vous contactera pour la confirmer.','شكراً على طلبكم! ستتصل بكم العيادة لتأكيده.']:['Votre demande est enregistrée. Le rendez-vous est confirmé par la clinique.','تم تسجيل طلبكم. تؤكد العيادة الموعد.']),W-2*P).forEach(l=>{txt(l,sx,y,14,500,'#542477','start');y+=21});
+ y+=10;rule();y+=26;
+ txt(T(['Grande Rue, El-Bayadh 32000 · M2M6+JQW','الشارع الرئيسي، البيض 32000 · M2M6+JQW']),sx,y,13,500,'#6b6376','start');y+=21;
+ txt('0551 87 47 03',sx,y,13,500,'#6b6376','start');y+=21;
+ txt('YOUR PETS, OUR PASSION',sx,y,12,700,'#542477','start');
+ return y+34}
+async function showReceipt(r){const ar=lang==='ar',fn=ar?'Cairo':'"Plus Jakarta Sans"';
+ try{await Promise.all([400,500,600,700,800].map(w=>document.fonts.load(w+' 16px '+fn,'Aaé0 ابت')))}catch(e){}
+ const cv=document.createElement('canvas'),W=640,S=2,c=cv.getContext('2d'),H=drawR(c,r,ar,W,true);
+ cv.width=W*S;cv.height=H*S;c.scale(S,S);drawR(c,r,ar,W,false);
+ const u=cv.toDataURL('image/png');$('rImg').src=u;$('rImg').alt=r.ref;$('rDl').href=u;$('rDl').download='recu-monzoo-'+r.ref+'.png';
+ $('rMsg').textContent=r.kind==='cmd'?(ar?'تم تسجيل طلبكم. حمّلوا الإيصال واحتفظوا به.':'Votre commande est enregistrée. Téléchargez votre reçu et gardez-le.'):(ar?'تم تسجيل طلب الموعد. حمّلوا الإيصال واحتفظوا به.':'Votre demande de rendez-vous est enregistrée. Téléchargez votre reçu et gardez-le.');
+ $('rcpt').hidden=false}
+$('rX').onclick=()=>{$('rcpt').hidden=true};$('rPr').onclick=()=>window.print();
+let ordP=null,ordQ=1;
+function openOrder(p,q){if(!p)return;ordP=p;ordQ=q;$('oName').textContent=((lang==='ar'&&p.name_ar)||p.name_fr)+' ×'+q;$('oTot').textContent=fmt(p.price*q);$('ord').hidden=false;$('oN').focus()}
+$('oX').onclick=()=>{$('ord').hidden=true};
+$('oOk').onclick=()=>{const n=$('oN').value.trim(),ph=$('oP').value.trim(),ad=$('oA').value.trim();
+ if(!n||ph.replace(/\D/g,'').length<9){alert(lang==='fr'?'Merci d’indiquer votre nom et un numéro de téléphone valide.':'يرجى إدخال الاسم ورقم هاتف صحيح.');return}
+ const p=ordP,q=ordQ,ref=mkRef(),tot=p.price*q;
+ const rec={kind:'cmd',ref,name:n,phone:ph,rows:ad?[[['Adresse','العنوان'],ad]]:[],items:[{n:(lang==='ar'&&p.name_ar)||p.name_fr,q,u:p.price}],total:tot};
+ notifyOwner('🛒 Commande '+ref+'\nNom : '+n+'\nTéléphone : '+ph+(ad?'\nAdresse : '+ad:'')+'\n'+p.name_fr+' x'+q+'\nTotal : '+da(tot));
+ api('/rest/v1/orders',{method:'POST',headers:J,body:JSON.stringify({ref,name:n,phone:ph,address:ad||null,items:[{name:p.name_fr,qty:q,price:p.price}],total:tot})}).catch(()=>{});
+ $('ord').hidden=true;showReceipt(rec)};
 
 /* ===== Rendez-vous ===== */
 (()=>{const d=$('rdvDate'),t=new Date();d.min=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
 $('rdvSend').onclick=()=>{const n=$('rdvName').value.trim(),p=$('rdvPhone').value.trim();
  if(!n||!p||!d.value){alert(lang==='fr'?'Merci d’indiquer votre nom, votre téléphone et la date.':'يرجى إدخال الاسم والهاتف والتاريخ.');return}
  const [y,m,j]=d.value.split('-'),note=$('rdvNote').value.trim(),tm=$('rdvTime').value;
- const msg=['Bonjour MonZoo, je souhaite prendre rendez-vous :','Nom : '+n,'Téléphone : '+p,'Animal : '+$('rdvAnimal').value,'Service : '+$('rdvService').value,'Date : '+j+'/'+m+'/'+y,'Heure : '+(tm||'à convenir')].concat(note?['Remarque : '+note]:[]).join('\n');
- window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
- api('/rest/v1/appointments',{method:'POST',headers:J,body:JSON.stringify({name:n,phone:p,animal:$('rdvAnimal').value,service:$('rdvService').value,date:d.value,time:tm||null,note:note||null})}).catch(()=>{})}})();
+ const dt=j+'/'+m+'/'+y,an=$('rdvAnimal').value,sv=$('rdvService').value,ref=mkRef();
+  const rec={kind:'rdv',ref,name:n,phone:p,rows:[[['Animal','الحيوان'],$('rdvAnimal').selectedOptions[0].textContent],[['Service','الخدمة'],$('rdvService').selectedOptions[0].textContent],[['Date du rendez-vous','تاريخ الموعد'],dt],[['Heure','الساعة'],tm||(lang==='fr'?'à convenir':'يُحدد لاحقاً')]].concat(note?[[['Remarque','ملاحظة'],note]]:[])};
+  notifyOwner('📅 Rendez-vous '+ref+'\nNom : '+n+'\nTéléphone : '+p+'\nAnimal : '+an+'\nService : '+sv+'\nDate : '+dt+'\nHeure : '+(tm||'à convenir')+(note?'\nRemarque : '+note:''));
+  api('/rest/v1/appointments',{method:'POST',headers:J,body:JSON.stringify({name:n,phone:p,animal:an,service:sv,date:d.value,time:tm||null,note:'['+ref+']'+(note?' '+note:'')})}).catch(()=>{});
+  showReceipt(rec)}})();
 
 /* ===== Admin ===== */
 const run=async f=>{try{await f()}catch(e){if(e.message==='session'){alert('Session expirée, reconnectez-vous.');showAdm()}else alert('Erreur : '+e.message)}};
@@ -302,8 +389,16 @@ $('lBtn').onclick=()=>run(async()=>{const r=await fetch(SB+'/auth/v1/token?grant
  const d=await r.json();if(!r.ok||!d.access_token){alert('Email ou mot de passe incorrect.');return}
  tok=d.access_token;try{sessionStorage.setItem('mz_tok',tok)}catch(e){}$('lPass').value='';showAdm()});
 $('aOut').onclick=()=>{tok=null;try{sessionStorage.removeItem('mz_tok')}catch(e){}showAdm()};
-$('tabP').onclick=()=>{$('pPane').hidden=false;$('rPane').hidden=true;$('tabP').className='abtn p';$('tabR').className='abtn'};
-$('tabR').onclick=()=>run(async()=>{$('pPane').hidden=true;$('rPane').hidden=false;$('tabR').className='abtn p';$('tabP').className='abtn';await loadAppts()});
+const tabs3=k=>{[['P','pPane'],['R','rPane'],['O','oPane']].forEach(([x,y])=>{$(y).hidden=x!==k;$('tab'+x).className=x===k?'abtn p':'abtn'})};
+$('tabP').onclick=()=>tabs3('P');
+$('tabR').onclick=()=>run(async()=>{tabs3('R');await loadAppts()});
+$('tabO').onclick=()=>run(async()=>{tabs3('O');await loadOrders()});
+async function loadOrders(){const a=await api('/rest/v1/orders?select=*&order=created_at.desc&limit=100');
+  $('oList').innerHTML=a.map(x=>{const wa='213'+String(x.phone).replace(/\D/g,'').replace(/^(213|0)/,''),it=(x.items||[]).map(i=>esc(i.name)+' ×'+esc(i.qty)).join(', ');
+  return `<div class="arow" style="align-items:flex-start"><div class="nm"><b>${esc(x.ref)}</b> · ${esc(x.name)} · <a href="tel:${esc(x.phone)}">${esc(x.phone)}</a> · <a href="https://wa.me/${wa}" target="_blank" rel="noopener">WhatsApp</a><br>${it} · <b>${fmt(x.total)}</b>${x.address?'<br>📍 '+esc(x.address):''}<br><small>Statut : ${esc(x.status)}</small></div><div style="display:flex;flex-direction:column;gap:6px"><button type="button" data-a="ok" data-id="${x.id}">✔ Confirmer</button><button type="button" data-a="del" data-id="${x.id}">🗑</button></div></div>`}).join('')||'<p class="muted">Aucune commande pour le moment.</p>'}
+$('oList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;run(async()=>{
+  if(b.dataset.a==='ok')await api('/rest/v1/orders?id=eq.'+b.dataset.id,{method:'PATCH',headers:J,body:JSON.stringify({status:'confirmé'})});
+  else if(confirm('Supprimer cette commande ?'))await api('/rest/v1/orders?id=eq.'+b.dataset.id,{method:'DELETE'});else return;await loadOrders()})});
 function renderAdm(){$('aList').innerHTML=PRODUCTS.map((p,i)=>{const c=CATS.find(x=>x.id===p.category)||CATS[1];return `<div class="arow"><div class="th">${p.image_url?`<img src="${esc(p.image_url)}" alt="">`:c.icon}</div><div class="nm"><b>${esc(p.name_fr)}</b><br>${c.fr} · ${fmt(p.price)}</div><button type="button" data-a="e" data-i="${i}">Modifier</button><button type="button" data-a="d" data-i="${i}">🗑</button></div>`}).join('')||'<p class="muted">Aucun produit pour le moment.</p>'}
 function resetForm(){editI=-1;imgBlob=null;imgUrl='';$('fFr').value=$('fAr').value=$('fPrice').value='';$('fImg').value='';$('fPrev').style.display='none';$('aSave').textContent='Ajouter le produit';$('aCancel').hidden=true}
 $('aCancel').onclick=resetForm;
