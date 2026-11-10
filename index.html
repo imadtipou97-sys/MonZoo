@@ -319,9 +319,9 @@ renderProducts();loadProducts();
 try{if(localStorage.getItem('mz_lang')==='ar')setLang('ar')}catch(e){}
 
 /* ===== Reçu (commande / rendez-vous) ===== */
-const TG_TOKEN='9114143391:AAFwc4Fx8BI3SJRLT9Erun0I1X7Bel0U9A0',TG_CHAT='6629459643';/* Telegram : jeton du bot + identifiant du chat pour recevoir commandes et rendez-vous */
+const TG_TOKEN='9114143391:AAFwc4Fx8BI3SJRLT9Erun0I1X7Bel0U9A0',TG_CHATS=['6629459643','5136143999'];/* Telegram : jeton du bot + identifiant du chat pour recevoir commandes et rendez-vous */
 function mkRef(){const t=new Date(),z=x=>String(x).padStart(2,'0');return 'MZ-'+String(t.getFullYear()).slice(2)+z(t.getMonth()+1)+z(t.getDate())+'-'+Math.floor(1000+Math.random()*9000)}
-function notifyOwner(t){if(!TG_TOKEN||!TG_CHAT)return;try{fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage?chat_id='+encodeURIComponent(TG_CHAT)+'&text='+encodeURIComponent(t),{mode:'no-cors'}).catch(()=>{})}catch(e){}}
+function notifyOwner(t){if(!TG_TOKEN)return;TG_CHATS.forEach(c=>{try{fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage?chat_id='+encodeURIComponent(c)+'&text='+encodeURIComponent(t),{mode:'no-cors'}).catch(()=>{})}catch(e){}})}
 const MAKE_URL='https://hook.eu1.make.com/34f0p4xfgeoue75b5k1xu3xp93w3h2ll';/* Adresse du webhook Make.com */
 function logSheet(o){if(!MAKE_URL)return;try{fetch(MAKE_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(Object.assign({},o,{lang:lang})).toString()}).catch(()=>{})}catch(e){}}
 const da=n=>Number(n).toLocaleString('fr-FR')+' DA';
