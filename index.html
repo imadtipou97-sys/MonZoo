@@ -435,4 +435,18 @@ $('rList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b
 if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){document.documentElement.classList.add('js');
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(()=>{el.classList.remove('rv','in');el.style.transitionDelay=''},1100)}}),{threshold:.12});
  document.querySelectorAll('.section-head,.strip-in,.card,.rdv-box,.shop-note,.ggrid figure,.contact-box,.about-grid>div:first-child').forEach((el,i)=>{el.classList.add('rv');el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)})}
-</script></body></html>
+</script><script>
+/* Facebook/Instagram/Messenger in-app browsers block the Google Maps iframe: show a tap-to-open card instead */
+(function(){
+ var ua=navigator.userAgent||'';
+ if(!/FBAN|FBAV|FB_IAB|FBIOS|Instagram|Messenger/i.test(ua))return;
+ var f=document.querySelector('iframe.mapframe');if(!f)return;
+ var link=f.nextElementSibling,href=link&&link.href?link.href:'https://maps.app.goo.gl/7WoATVbghBTe5La29';
+ var d=document.createElement('div');
+ d.className='mapframe';
+ d.style.cssText='display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box;background:#e9dcf3;color:#3b1a5a;font-weight:700';
+ d.innerHTML='<a href="'+href+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">\uD83D\uDCCD<br>Google Maps<br><small>Cabinet V\u00e9t\u00e9rinaire MonZoo, El Bayadh</small></a>';
+ f.parentNode.replaceChild(d,f);
+})();
+</script>
+</body></html>
