@@ -76,7 +76,26 @@ h2{font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.12;color:var(--deep);margin:
 .tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 40px}
 .tab{border:1.5px solid var(--line);background:#fff;color:var(--purple);border-radius:999px;padding:11px 22px;font-weight:700;cursor:pointer;font-size:.95rem;font-family:inherit;transition:.2s}
 .tab.active,.tab:hover{background:var(--purple);color:#fff;border-color:var(--purple)}
-.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.pgrid{display:flex;flex-direction:column;gap:22px}
+.crow{background:linear-gradient(#faf6fd,#fff);border:1px solid var(--line);border-radius:28px;padding:20px 0 14px}
+.chead{display:flex;align-items:center;gap:12px;padding:0 24px 12px}
+.cico{width:44px;height:44px;border-radius:15px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:1.4rem;flex:none}
+.chead h3{margin:0;font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--deep);letter-spacing:-.01em}[lang=ar] .chead h3{font-family:'Cairo',sans-serif;font-weight:800}
+.ccount{background:var(--purple);color:#fff;font-size:.75rem;font-weight:800;border-radius:999px;padding:2px 10px;line-height:1.6}
+.cnav{margin-inline-start:auto;display:flex;gap:8px}
+.carr{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--purple);font-size:1.5rem;line-height:1;padding:0 0 3px;cursor:pointer;transition:.2s}
+.carr:hover:not(:disabled){background:var(--purple);color:#fff;border-color:var(--purple)}.carr:disabled{opacity:.35;cursor:default}
+[dir=rtl] .carr{transform:scaleX(-1)}
+.ctrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:8px 24px 14px;scroll-padding-inline:24px;scrollbar-width:thin;scrollbar-color:#d8c7e5 transparent;-webkit-overflow-scrolling:touch}
+.ctrack::-webkit-scrollbar{height:6px}.ctrack::-webkit-scrollbar-thumb{background:#d8c7e5;border-radius:6px}
+.ctrack .pcard{flex:0 0 228px;scroll-snap-align:start;border-radius:20px}
+.ctrack .pcard:hover{transform:translateY(-4px);box-shadow:0 14px 26px -14px #54247777}
+.ctrack .pimg{aspect-ratio:4/3;font-size:2.6rem}
+.ctrack .pbody{padding:14px;gap:4px}
+.ctrack .pname{font-size:.97rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.7em}
+.ctrack .pprice{font-size:1.15rem;padding-top:2px}
+.ctrack .qty{margin-top:8px;gap:6px}.ctrack .qty button{width:32px;height:32px;font-size:1.1rem}.ctrack .qty input{width:46px;height:32px}
+.ctrack .pbtn{padding:9px;margin-top:8px}
 .pcard{border:1px solid var(--line);border-radius:24px;background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
 .pcard:hover{transform:translateY(-6px);box-shadow:var(--sh)}
 .pimg{aspect-ratio:1/1;background:linear-gradient(135deg,#f4eef9,#e9dcf3);display:grid;place-items:center;font-size:3.4rem;overflow:hidden}
@@ -101,9 +120,9 @@ h2{font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.12;color:var(--deep);margin:
 footer{background:#1b0b29;color:#cdbfdb;padding:40px 22px;text-align:center;font-size:.92rem;line-height:1.9}footer strong{color:#fff;font-size:1.1rem}
 [dir="rtl"] body{text-align:right}[dir="rtl"] .brand{margin-right:0;margin-left:auto}[dir="rtl"] .hero-inner,[dir="rtl"] .about-grid{direction:rtl}
 [dir="rtl"] .hero-visual{padding:0 40px 40px 0}[dir="rtl"] .hero-art{left:auto;right:0}[dir="rtl"] .card:before{right:auto;left:22px}
-@media(max-width:1100px){.cards,.pgrid{grid-template-columns:repeat(2,1fr)}.hero-inner{gap:40px}}
+@media(max-width:1100px){.cards{grid-template-columns:repeat(2,1fr)}.hero-inner{gap:40px}}
 @media(max-width:900px){nav,.navcta{display:none}.nav{border-radius:24px}.hero-inner,.about-grid,.contact-box{grid-template-columns:1fr}.hero-inner{padding:130px 22px 80px}.hero-visual{max-width:440px;margin:auto}.strip-in{grid-template-columns:1fr}.strip-in div+div{border-inline-start:0;border-top:1px solid var(--line)}.contact-box{padding:32px 24px}.mapcol{max-width:440px}.ggrid{grid-template-columns:1fr;max-width:420px;margin:auto}.ggrid figure:nth-child(2){margin-top:0}section{padding:70px 20px}}
-@media(max-width:560px){.cards,.pgrid{grid-template-columns:1fr}.pgrid{gap:14px}.rdv-grid{grid-template-columns:1fr}.rdv-box{padding:24px 18px}.aform{grid-template-columns:1fr}.brand img{width:40px;height:40px}.tab{padding:9px 15px;font-size:.85rem}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}.crow{border-radius:22px;padding-top:16px}.chead{padding:0 16px 10px}.ctrack{padding:8px 16px 14px;scroll-padding-inline:16px;gap:12px}.ctrack .pcard{flex-basis:62vw;max-width:216px}.cnav{display:none}.rdv-grid{grid-template-columns:1fr}.rdv-box{padding:24px 18px}.aform{grid-template-columns:1fr}.brand img{width:40px;height:40px}.tab{padding:9px 15px;font-size:.85rem}}
 #adm{position:fixed;inset:0;background:#000a;z-index:50;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:16px}
 #adm[hidden]{display:none}
 .apanel{background:#fff;border-radius:20px;max-width:760px;width:100%;padding:22px;margin:auto}
@@ -207,6 +226,40 @@ button.pbtn{width:100%;border:0;cursor:pointer;font-family:inherit}
 .rimg{width:100%;height:auto;display:block}
 [dir=rtl] .mzc{text-align:right}
 @media print{body>*:not(#rcpt){display:none!important}#rcpt{position:static;background:#fff;padding:0}#rcpt .mzc{box-shadow:none;max-width:none;padding:0}#rcpt .mzb,#rcpt h3,#rcpt p{display:none}.rimg-wrap{max-height:none;overflow:visible;border:0}}
+
+/* ===== Services : nouveau style ===== */
+.slayout{display:flex;flex-direction:column;align-items:stretch;gap:18px;grid-template-columns:none}
+.smenu{position:static;display:grid;grid-template-columns:repeat(6,1fr);gap:12px;background:none;border:0;box-shadow:none;padding:0;border-radius:0}
+.sitem{position:relative;flex-direction:column;justify-content:flex-start;text-align:center;gap:10px;padding:16px 8px 14px;border:1px solid var(--line);background:#fff;border-radius:22px;font-size:.88rem;line-height:1.25;box-shadow:0 10px 24px -18px #54247766}
+.sitem span{display:flex;align-items:center;justify-content:center;min-height:2.5em}
+.sitem i{width:54px;height:54px;border-radius:50%;font-size:1.55rem;background:var(--lavender)}
+.sitem:after{display:none}
+.sitem:before{content:"";position:absolute;left:50%;bottom:-16px;width:14px;height:14px;background:var(--deep);border-radius:3px;transform:translateX(-50%) rotate(45deg);opacity:0;transition:.25s;z-index:2}
+.sitem.active:before{opacity:1}
+.sitem:not(.active):hover{background:#fff;border-color:#d9c3ec;transform:translateY(-4px);box-shadow:var(--sh)}
+.sitem:not(.active):hover i{background:var(--purple);transform:scale(1.06)}
+.sitem.active{background:linear-gradient(160deg,var(--violet),var(--purple));color:#fff;border-color:transparent;box-shadow:0 18px 30px -14px #542477cc;transform:translateY(-4px)}
+.sitem.active i{background:#ffffff2e}
+.spanel{position:relative;overflow:hidden;min-height:0;padding:40px 52px;grid-template-columns:1.15fr .85fr;gap:40px;border:0;border-radius:34px;background:linear-gradient(135deg,var(--deep) 0,#44195f 55%,var(--purple) 100%);box-shadow:0 30px 60px -28px #2a1240aa;color:#fff}
+.spanel:before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:var(--gold);opacity:.16;right:-90px;top:-110px}
+[dir=rtl] .spanel:before{right:auto;left:-90px}
+.spanel:after{content:"";position:absolute;inset:0;background-image:radial-gradient(#ffffff1c 1.5px,transparent 1.5px);background-size:24px 24px;-webkit-mask-image:linear-gradient(90deg,transparent,#000);mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.spanel>*{position:relative;z-index:1}
+.spanel h3{color:#fff}
+.spanel p{color:#e6d9f1;max-width:480px}
+.sicon{width:64px;height:64px;border-radius:20px;font-size:1.9rem;margin-bottom:20px;background:#ffffff1f;border:1px solid #ffffff38;box-shadow:none;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.spanel .btn.primary{background:var(--gold);color:var(--deep);box-shadow:0 14px 28px -12px #f3b24a99}.spanel .btn.primary:hover{background:#fff}
+.svisual{justify-self:center;width:min(100%,250px);aspect-ratio:5/6;max-height:none;border-radius:999px 999px 28px 28px;border:6px solid #fff;box-shadow:0 24px 50px -20px #000a}
+.svisual.emoji{font-size:6rem;background:radial-gradient(circle at 30% 25%,#fff 0,#eadcf5 75%)}
+@media(max-width:900px){
+ .smenu{display:flex;overflow-x:auto;gap:10px;padding:8px 2px 14px;scroll-snap-type:x proximity;scrollbar-width:none}
+ .sitem{flex:0 0 112px;scroll-snap-align:center;white-space:normal;padding:14px 8px 12px}
+ .sitem:before{display:none}
+ .sitem i{width:46px;height:46px;font-size:1.3rem}
+ .spanel{grid-template-columns:1fr;padding:28px 22px;gap:24px}
+ .svisual{width:min(100%,170px);aspect-ratio:1/1;max-height:none;border-width:5px}
+ .svisual.emoji{font-size:4.5rem}
+}
 </style>
 </head>
 <body>
@@ -235,7 +288,6 @@ button.pbtn{width:100%;border:0;cursor:pointer;font-family:inherit}
 <section class="rdv" id="rdv"><div class="wrap"><div class="section-head"><h2 data-fr="Prendre rendez-vous" data-ar="احجز موعداً">Prendre rendez-vous</h2><p data-fr="Choisissez le service et la date qui vous conviennent. Vous recevez un reçu à télécharger." data-ar="اختاروا الخدمة والتاريخ المناسبين. ستحصلون على إيصال قابل للتحميل.">Choisissez le service et la date qui vous conviennent. Vous recevez un reçu à télécharger.</p></div><div class="rdv-box"><div class="rdv-grid"><label><span data-fr="Votre nom" data-ar="الاسم">Votre nom</span><input id="rdvName" type="text" autocomplete="name"></label><label><span data-fr="Téléphone" data-ar="الهاتف">Téléphone</span><input id="rdvPhone" type="tel" autocomplete="tel"></label><label><span data-fr="Animal" data-ar="الحيوان">Animal</span><select id="rdvAnimal"><option value="Chien" data-fr="Chien" data-ar="كلب">Chien</option><option value="Chat" data-fr="Chat" data-ar="قط">Chat</option><option value="Oiseau" data-fr="Oiseau" data-ar="طائر">Oiseau</option><option value="Autre" data-fr="Autre" data-ar="آخر">Autre</option></select></label><label><span data-fr="Service" data-ar="الخدمة">Service</span><select id="rdvService"><option value="Consultation" data-fr="Consultation" data-ar="فحص طبي">Consultation</option><option value="Vaccination" data-fr="Vaccination" data-ar="تلقيح">Vaccination</option><option value="Chirurgie" data-fr="Chirurgie" data-ar="جراحة">Chirurgie</option><option value="Suivi et conseils" data-fr="Suivi et conseils" data-ar="متابعة ونصائح">Suivi et conseils</option><option value="Soins d’élevage" data-fr="Soins d’élevage" data-ar="العناية بالقطيع">Soins d’élevage</option></select></label><label><span data-fr="Date souhaitée" data-ar="التاريخ">Date souhaitée</span><input id="rdvDate" type="date"></label><label><span data-fr="Heure souhaitée" data-ar="الساعة">Heure souhaitée</span><input id="rdvTime" type="time"></label><label class="full"><span data-fr="Remarque (facultatif)" data-ar="ملاحظة (اختياري)">Remarque (facultatif)</span><textarea id="rdvNote" rows="2"></textarea></label></div><button class="btn primary rdv-send" id="rdvSend" type="button" data-fr="Envoyer ma demande" data-ar="إرسال الطلب">Envoyer ma demande</button><p class="rdv-note" data-fr="Le rendez-vous est confirmé par la clinique après votre demande." data-ar="يتم تأكيد الموعد من طرف العيادة بعد طلبكم.">Le rendez-vous est confirmé par la clinique après votre demande.</p></div></div></section>
 <section class="products" id="produits"><div class="wrap">
 <div class="section-head"><h2 data-fr="Nos produits" data-ar="منتجاتنا">Nos produits</h2><p data-fr="Découvrez notre sélection pour la santé et le confort de vos animaux." data-ar="اكتشفوا مختارتنا لصحة وراحة حيواناتكم.">Découvrez notre sélection pour la santé et le confort de vos animaux.</p></div>
-<div class="tabs" id="tabs"></div>
 <div class="pgrid" id="pgrid"></div>
 </div></section>
 <section class="contact" id="contact"><div class="wrap"><div class="contact-box"><div><div class="contact-label" data-fr="Retrouvez-nous" data-ar="زورونا">Retrouvez-nous</div><h2 data-fr="Nous sommes heureux de vous accueillir." data-ar="يسعدنا استقبالكم.">Nous sommes heureux de vous accueillir.</h2><p data-fr="Grande Rue, près de la mosquée Bilal Ibn Rabah (Gwarir), et de la Caserne de Transmission." data-ar="الشارع الرئيسي، بالقرب من مسجد بلال بن رباح (قوارير) وثكنة الإرسال.">Grande Rue, près de la mosquée Bilal Ibn Rabah (Gwarir), et de la Caserne de Transmission.</p><div class="hours"><div class="contact-label" data-fr="Horaires de travail" data-ar="ساعات العمل">Horaires de travail</div><div class="hrow"><span data-fr="Samedi au jeudi" data-ar="من السبت إلى الخميس">Samedi au jeudi</span><b dir="ltr" data-fr="8h00 – 19h00" data-ar="08:00 – 19:00">8h00 – 19h00</b></div><div class="hrow"><span data-fr="Vendredi" data-ar="الجمعة">Vendredi</span><b dir="ltr" data-fr="8h00 – 12h00 · 15h00 – 19h00" data-ar="08:00 – 12:00 · 15:00 – 19:00">8h00 – 12h00 · 15h00 – 19h00</b></div></div><p style="margin-top:18px"><span class="contact-label" data-fr="Téléphone" data-ar="الهاتف">Téléphone</span><br><a dir="ltr" style="display:inline-block;color:#fff;text-decoration:none" href="tel:+213551874703">0551 87 47 03</a></p><p style="margin-top:12px"><span class="contact-label">Facebook &amp; Instagram</span><br><a style="color:#fff" href="https://www.facebook.com/share/1L31Ez7nGb/" target="_blank" rel="noopener">Facebook</a> · <a style="color:#fff" href="https://www.instagram.com/monzoo.vet?mdxt=YmtzMXR0bzdqZGV2" target="_blank" rel="noopener">Instagram</a></p><div class="actions"><a class="btn secondary" href="https://wa.me/213551874703" target="_blank" rel="noopener">WhatsApp</a></div></div><div class="mapcol"><iframe class="mapframe" title="Localisation MonZoo" src="https://www.google.com/maps?q=Cabinet+V%C3%A9t%C3%A9rinaire+Mon+Zoo+M2M6%2BJQW+La+Grand+Rue+El+Bayadh+32000&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="btn secondary" href="https://maps.app.goo.gl/7WoATVbghBTe5La29" target="_blank" rel="noopener" data-fr="Voir l’itinéraire" data-ar="عرض الاتجاهات">Voir l’itinéraire</a></div></div></div></section>
@@ -295,13 +347,19 @@ navEl.addEventListener('click',e=>{if(e.target.closest('a')){navEl.classList.rem
 const CATS=[{id:'all',fr:'Tous',ar:'الكل'},{id:'nutrition',fr:'Nutrition',ar:'التغذية',icon:'🍖'},{id:'pharmacy',fr:'Pharmacie',ar:'الصيدلية',icon:'💊'},{id:'hygiene',fr:'Hygiène et bien-être',ar:'النظافة والعناية',icon:'🧴'},{id:'accessoires',fr:'Accessoires',ar:'الإكسسوارات',icon:'🦴'}];
 const fmt=n=>Number(n).toLocaleString('fr-FR')+(lang==='ar'?' دج':' DA');
 function renderProducts(){
- $('tabs').innerHTML=CATS.map(c=>`<button type="button" class="tab${c.id===activeCat?' active':''}" data-cat="${c.id}">${c[lang]}</button>`).join('');
- const list=PRODUCTS.filter(p=>activeCat==='all'||p.category===activeCat);
- if(!list.length){$('pgrid').innerHTML=`<p class="muted" style="grid-column:1/-1;text-align:center">${loadErr?(lang==='fr'?'Impossible de charger les produits pour le moment.':'تعذر تحميل المنتجات حالياً.'):(lang==='fr'?'Les produits arrivent bientôt.':'المنتجات قريباً.')}</p>`;return}
- $('pgrid').innerHTML=list.map(p=>{const c=CATS.find(x=>x.id===p.category)||CATS[1],name=(lang==='ar'&&p.name_ar)||p.name_fr;
-  const img=p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(name)}" loading="lazy">`:c.icon;
-  const msg=encodeURIComponent((lang==='fr'?'Bonjour, je suis intéressé par : ':'مرحباً، أنا مهتم بـ: ')+p.name_fr);
-  return `<article class="pcard" data-id="${p.id}"><div class="pimg">${img}</div><div class="pbody"><span class="pcat">${c[lang]}</span><h3 class="pname">${esc(name)}</h3><div class="pprice">${fmt(p.price)}</div><div class="qty"><button type="button" data-q="-1" aria-label="-">−</button><input type="number" inputmode="numeric" min="1" max="99" value="1" aria-label="${lang==='fr'?'Quantité':'الكمية'}"><button type="button" data-q="1" aria-label="+">+</button><span class="qtot" hidden></span></div><button type="button" class="pbtn">${lang==='fr'?'Commander':'اطلب الآن'}</button></div></article>`}).join('')}
+ const grid=$('pgrid');
+ if(!PRODUCTS.length){grid.innerHTML=`<p class="muted" style="text-align:center">${loadErr?(lang==='fr'?'Impossible de charger les produits pour le moment.':'تعذر تحميل المنتجات حالياً.'):(lang==='fr'?'Les produits arrivent bientôt.':'المنتجات قريباً.')}</p>`;return}
+ const real=CATS.filter(c=>c.id!=='all'),known=id=>real.some(c=>c.id===id);
+ const card=(p,c)=>{const name=(lang==='ar'&&p.name_ar)||p.name_fr,img=p.image_url?`<img src="${esc(p.image_url)}" alt="${esc(name)}" loading="lazy">`:c.icon;
+  return `<article class="pcard" data-id="${p.id}"><div class="pimg">${img}</div><div class="pbody"><h4 class="pname">${esc(name)}</h4><div class="pprice">${fmt(p.price)}</div><div class="qty"><button type="button" data-q="-1" aria-label="-">−</button><input type="number" inputmode="numeric" min="1" max="99" value="1" aria-label="${lang==='fr'?'Quantité':'الكمية'}"><button type="button" data-q="1" aria-label="+">+</button><span class="qtot" hidden></span></div><button type="button" class="pbtn">${lang==='fr'?'Commander':'اطلب الآن'}</button></div></article>`};
+ grid.innerHTML=real.map(c=>{const list=PRODUCTS.filter(p=>(known(p.category)?p.category:'nutrition')===c.id);if(!list.length)return '';
+  return `<div class="crow" data-cat="${c.id}"><div class="chead"><span class="cico">${c.icon}</span><h3>${c[lang]}</h3><span class="ccount">${list.length}</span><div class="cnav"><button type="button" class="carr" data-d="-1" aria-label="${lang==='fr'?'Précédent':'السابق'}">‹</button><button type="button" class="carr" data-d="1" aria-label="${lang==='fr'?'Suivant':'التالي'}">›</button></div></div><div class="ctrack">${list.map(p=>card(p,c)).join('')}</div></div>`}).join('');
+ requestAnimationFrame(()=>grid.querySelectorAll('.ctrack').forEach(arrows))}
+function arrows(t){const r=t.closest('.crow'),pv=r.querySelector('[data-d="-1"]'),nx=r.querySelector('[data-d="1"]'),max=t.scrollWidth-t.clientWidth,x=Math.abs(t.scrollLeft);
+ r.querySelector('.cnav').style.visibility=max>4?'':'hidden';pv.disabled=x<4;nx.disabled=x>max-4}
+$('pgrid').addEventListener('click',e=>{const b=e.target.closest('.carr');if(!b)return;const t=b.closest('.crow').querySelector('.ctrack'),s=document.documentElement.dir==='rtl'?-1:1;t.scrollBy({left:s*(+b.dataset.d)*t.clientWidth*.85,behavior:'smooth'})});
+$('pgrid').addEventListener('scroll',e=>{if(e.target.classList&&e.target.classList.contains('ctrack'))arrows(e.target)},true);
+addEventListener('resize',()=>document.querySelectorAll('#pgrid .ctrack').forEach(arrows));
 /* ===== Quantité ===== */
 function qtyUpdate(card){const p=PRODUCTS.find(x=>String(x.id)===card.dataset.id);if(!p)return;const inp=card.querySelector('.qty input');
  let q=parseInt(inp.value,10);if(isNaN(q)||q<1)q=1;if(q>99)q=99;inp.value=q;
@@ -313,7 +371,6 @@ $('pgrid').addEventListener('click',e=>{const b=e.target.closest('.qty button');
 $('pgrid').addEventListener('input',e=>{if(e.target.matches('.qty input'))qtyUpdate(e.target.closest('.pcard'))});
 $('pgrid').addEventListener('change',e=>{if(e.target.matches('.qty input'))qtyUpdate(e.target.closest('.pcard'))});
 $('pgrid').addEventListener('click',e=>{const b=e.target.closest('.pbtn');if(!b)return;const card=b.closest('.pcard');qtyUpdate(card);openOrder(PRODUCTS.find(x=>String(x.id)===card.dataset.id),parseInt(card.querySelector('.qty input').value,10)||1)});
-$('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b){activeCat=b.dataset.cat;renderProducts()}});
 async function loadProducts(){try{PRODUCTS=await api('/rest/v1/products?select=*&order=id.desc');loadErr=false}catch(e){if(e.message!=='session')loadErr=true}renderProducts()}
 renderProducts();loadProducts();
 try{if(localStorage.getItem('mz_lang')==='ar')setLang('ar')}catch(e){}
@@ -441,7 +498,7 @@ if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion:reduce
  var ua=navigator.userAgent||'';
  if(!/FBAN|FBAV|FB_IAB|FBIOS|Instagram|Messenger/i.test(ua))return;
  var f=document.querySelector('iframe.mapframe');if(!f)return;
- var link=f.nextElementSibling,href=link&&link.href?link.href:'https://maps.app.goo.gl/7WoATVbghBTe5La29';
+ var link=f.nextElementSibling,href=link?link.href:'https://maps.app.goo.gl/7WoATVbghBTe5La29';
  var d=document.createElement('div');
  d.className='mapframe';
  d.style.cssText='display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box;background:#e9dcf3;color:#3b1a5a;font-weight:700';
